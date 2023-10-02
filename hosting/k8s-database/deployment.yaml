@@ -22,18 +22,18 @@ spec:
         app: database
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database:latest
-          imagePullPolicy: Always
-          name: database
-        - env:
-          - name: POSTGRES_DB
-            value: postgres
-          - name: POSTGRES_USER
-            value: postgres
-          - name: POSTGRES_PASSWORD
-            value: postgres
-          - name: PGDATA
-            value: /temp/data
+      - env:
+        - name: POSTGRES_DB
+          value: postgres
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: PGDATA
+          value: /temp/data
+        image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database:latest
+        imagePullPolicy: Always
+        name: database
     ports:
       - containerPort: 5432
         protocol: TCP
