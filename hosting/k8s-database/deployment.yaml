@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: database
+    app.kubernetes.io/component: database
+    app.kubernetes.io/instance: database
+    app.kubernetes.io/name: database
+    app.kubernetes.io/part-of: spring-boot-version-one
+    app.openshift.io/runtime-version: latest
+    app.openshift.io/runtime-namespace: cic-controlbook-dev
+  namespace: cic-controlbook-dev
+spec:
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+        - env:
+          - name: POSTGRES_DB
+            value: postgres
+          - name: POSTGRES_USER
+            value: postgres
+          - name: POSTGRES_PASSWORD
+            value: postgres
+          - name: PGDATA
+            value: /temp/data
+      image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database
+      imagePullPolicy: Always
+      name: postgres
+    ports:
+      - containerPort: 5432
+        protocol: TCP
