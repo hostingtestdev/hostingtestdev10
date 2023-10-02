@@ -9,8 +9,10 @@ metadata:
     app.kubernetes.io/part-of: spring-boot-version-one
     app.openshift.io/runtime-version: latest
     app.openshift.io/runtime-namespace: cic-controlbook-dev
+  name: database
   namespace: cic-controlbook-dev
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: database
