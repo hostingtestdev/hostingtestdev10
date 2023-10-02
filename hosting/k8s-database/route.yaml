@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: database
+    app.kubernetes.io/component: database
+    app.kubernetes.io/instance: database
+    app.kubernetes.io/name: database
+    app.kubernetes.io/part-of: spring-boot-version-one
+    app.openshift.io/runtime-version: latest
+  name: database
+spec:
+  port:
+    targetPort: 5432-tcp
+  to:
+    kind: Service
+    name: database
+    weight: 100
