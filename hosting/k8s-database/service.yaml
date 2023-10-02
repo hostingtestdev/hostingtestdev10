@@ -4,8 +4,8 @@ metadata:
   labels:
     app: database
     app.kubernetes.io/component: database
-    app.kubernetes.io/instance: d
-    app.kubernetes.io/name: backend
+    app.kubernetes.io/instance: database
+    app.kubernetes.io/name: database
     app.kubernetes.io/part-of: spring-boot-version-one
     app.openshift.io/runtime-version: latest
   name: database
@@ -17,4 +17,4 @@ spec:
       port: 5432
       protocol: 5432
   selector:
-    app: databse
+    app: database
