@@ -31,9 +31,9 @@ spec:
             value: postgres
           - name: PGDATA
             value: /temp/data
-      image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database
-      imagePullPolicy: Always
-      name: postgres
+        - image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database
+          imagePullPolicy: Always
+          name: database
     ports:
       - containerPort: 5432
         protocol: TCP
