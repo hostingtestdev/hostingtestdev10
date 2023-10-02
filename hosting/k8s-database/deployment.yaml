@@ -23,8 +23,8 @@ spec:
     spec:
       containers:
         - image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database:latest
-        imagePullPolicy: Always
-        name: database
+          imagePullPolicy: Always
+          name: database
         - env:
           - name: POSTGRES_DB
             value: postgres
