@@ -22,7 +22,7 @@ spec:
         app: database
     spec:
       containers:
-        image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database
+        - image: image-registry.openshift-image-registry.svc:5000/cic-controlbook-dev/database:latest
         imagePullPolicy: Always
         name: database
         - env:
